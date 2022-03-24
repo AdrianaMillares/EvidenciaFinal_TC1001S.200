@@ -148,7 +148,7 @@ def move():
     for point, course in ghosts:
         if abs(pacman - point) < 20:
             return
-    ontimer(move, 100)
+    ontimer(move, 10)
 
 
 def change(x, y):
