@@ -1,8 +1,14 @@
+# Codigo juego de Pacman
+# Importación de librerias
 from random import choice
-from turtle import *
+from turtle import clear, up, goto, dot, update, ontimer, setup,\
+                   hideturtle, tracer, onkey, done, bgcolor, Turtle, listen
 from freegames import floor, vector
 
+# Marcador
 state = {'score': 0}
+
+# Creacion de Pacman y los fantasmas
 path = Turtle(visible=False)
 writer = Turtle(visible=False)
 aim = vector(5, 0)
@@ -13,6 +19,8 @@ ghosts = [
     [vector(100, 160), vector(0, -5)],
     [vector(100, -160), vector(-5, 0)],
 ]
+
+# Creación del mapa de juego
 tiles = [
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0,
@@ -36,6 +44,9 @@ tiles = [
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 ]
 
+# Sección de funciones
+
+
 def square(x, y):
     "Draw square using path at (x, y)."
     path.up()
@@ -46,8 +57,8 @@ def square(x, y):
     for count in range(4):
         path.forward(20)
         path.left(90)
-
     path.end_fill()
+
 
 def offset(point):
     "Return offset of point in tiles."
@@ -55,6 +66,7 @@ def offset(point):
     y = (180 - floor(point.y, 20)) / 20
     index = int(x + y * 20)
     return index
+
 
 def valid(point):
     "Return True if point is valid in tiles."
@@ -69,6 +81,7 @@ def valid(point):
         return False
 
     return point.x % 20 == 0 or point.y % 20 == 0
+
 
 def world():
     "Draw world using path."
@@ -87,6 +100,7 @@ def world():
                 path.up()
                 path.goto(x + 10, y + 10)
                 path.dot(2, 'white')
+
 
 def move():
     "Move pacman and all ghosts."
@@ -134,8 +148,8 @@ def move():
     for point, course in ghosts:
         if abs(pacman - point) < 20:
             return
-
     ontimer(move, 100)
+
 
 def change(x, y):
     "Change pacman aim if valid."
@@ -143,6 +157,8 @@ def change(x, y):
         aim.x = x
         aim.y = y
 
+
+# Ambiente
 setup(420, 420, 370, 0)
 hideturtle()
 tracer(False)
