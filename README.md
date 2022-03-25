@@ -6,20 +6,28 @@ Para poder correr todos losjuegos es necesario contar con una versión de Python
 Tambien se necesitara contar con pip en nuestra computadora, puedes descargarlo del siguiente enlace [Descarga pip](https://pip.pypa.io/en/stable/installation/)
 
 Por último debemos contar con FreePythonGames. Para instalarlo debemos poner el siguiente comando en la consola
+  
+  ```
   py -m pip install freegames
-
+  ```
+  
 Se deberá clonar el repositorio haciendo uso del siguiente comando 
-  git clone https://github.com/AdrianaMillares/EvidenciaFinal_TC1001S.200
-
+ ```
+ git clone https://github.com/AdrianaMillares/EvidenciaFinal_TC1001S.200
+ ```
 ## ¿Cómo correr los juegos?
 
 Una vez que se tenga el repositorio clonado de manera local, accederemos a la terminal. y nos situaremos en la carpeta donde estén los archivos del juego. 
 Para iniciar los juegos es necesario poner el siguiente comando en pantalla 
+  ```
   py <Nombre del juego>
+  ```
 Donde <Nombre del juego> se remplazara con el nombre del archivo que quieras jugar.
-    py pacman.py
-    py tictactoe.py
-    py memory.py
+  ```
+  py pacman.py
+  py tictactoe.py
+  py memory.py
+  ```
 ## Juegos 
   
 ### Pacman
