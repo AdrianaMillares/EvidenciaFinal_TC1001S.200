@@ -6,3 +6,5 @@ Primeramente se agrego el código del juego de Pacman por defecto de freegames. 
 ## Tic Tac Toe
 
 ## Memory
+Memory es un rompecabezas en el cual debes recordar donde está la pareja de cada ficha para revelar la imagen oculta. Al código original de FreeGames se le añadio un contador en la parte superior de la pantalla, el cual nos indica el número de toques que le diste a la pantalla. Al finalizar el juego nos aparecera un mensaje que nos indica que todas las fichas se revelaron. 
+> Autora: Adriana Millares 
