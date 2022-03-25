@@ -9,11 +9,10 @@ Exercises:
 5. Use letters instead of tiles.
 """
 
-from operator import truediv
 from random import *
 from turtle import *
 
-from freegames import path, floor, vector
+from freegames import path
 
 state1 = {'score': 0}
 car = path('car.gif')
@@ -21,6 +20,7 @@ tiles = list(range(32)) * 2
 state = {'mark': None}
 hide = [True] * 64
 writer = Turtle(visible=False)
+
 
 def square(x, y):
     """Draw white square with black outline at (x, y)."""
@@ -46,12 +46,12 @@ def xy(count):
 
 
 def tap(x, y):
-    """Update mark and hidden tiles based on tap."""
-    
+    """"Count the number of taps."""
     writer.undo()
-    writer.write(state1['score'], font = ('Arial', 20, 'normal'))
+    writer.write(state1['score'], font=('Arial', 20, 'normal'))
     state1['score'] += 1
     clear()
+    """Update mark and hidden tiles based on tap."""
     spot = index(x, y)
     mark = state['mark']
 
@@ -64,11 +64,12 @@ def tap(x, y):
 
 
 def draw():
-    """Draw image and tiles."""
-    if(check_mark() == True):
+    """"Check if all the tiles are reveld."""
+    if check_mark():
         writer.undo()
         clear()
         writer.write('No hay mas cuadros', font=('Arial', 30, 'normal'))
+    """Draw image and tiles."""
     clear()
     goto(0, 0)
     shape(car)
@@ -90,16 +91,16 @@ def draw():
 
     update()
     ontimer(draw, 100)
-   
+
+
 def check_mark():
-    for i in range(64): 
-        if hide[i] == True: 
+    """"Check if all the tiles are reveld."""
+    for i in range(64):
+        if hide[i]:
             return False
     return True
 
 
-
-#write(state['score'])
 shuffle(tiles)
 setup(420, 420, 370, 0)
 addshape(car)
@@ -107,7 +108,7 @@ hideturtle()
 tracer(False)
 writer.goto(0, 200)
 writer.color('black')
-writer.write(state1['score'], font = ('Arial', 20, 'normal'))
+writer.write(state1['score'], font=('Arial', 20, 'normal'))
 clear()
 listen()
 onscreenclick(tap)
