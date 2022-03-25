@@ -9,9 +9,10 @@ Exercises
 """
 # Importe de librerias turtle y freegames
 from turtle import up, goto, down, circle, update, setup, hideturtle, tracer,\
-                   onscreenclick, done
+                   onscreenclick, done, color
 
 from freegames import line
+
 
 # Añade 4 lineas para formar el campo de juego
 def grid():
@@ -21,19 +22,24 @@ def grid():
     line(-200, -67, 200, -67)
     line(-200, 67, 200, 67)
 
+
 # Añade dos lineas para formar la X de uno de los jugadores
 def drawx(x, y):
     """Draw X player."""
-    line(x, y, x + 133, y + 133)
-    line(x, y + 133, x + 133, y)
+    color('red')
+    line(x + 33, y + 33, x + 100, y + 100)
+    line(x + 33, y + 100, x + 100, y + 33)
+
 
 # Añade un circulo de uno de los jugadores
 def drawo(x, y):
     """Draw O player."""
+    color('blue')
     up()
-    goto(x + 67, y + 5)
+    goto(x + 66, y + 33)
     down()
-    circle(62)
+    circle(33)
+
 
 # Valor redondeado a la cuadrícula con tamaño cuadrado 133
 def floor(value):
@@ -43,6 +49,7 @@ def floor(value):
 
 state = {'player': 0}
 players = [drawx, drawo]
+
 
 # Draw X or O in tapped square
 def tap(x, y):
