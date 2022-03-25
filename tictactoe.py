@@ -55,7 +55,7 @@ places_on_grid = [
     " ", " ", " "]
 
 
-# Draw X or O in tapped square
+# Dibuja una X u O en el cuadro seleccionado
 def tap(x, y):
     """Draw X or O in tapped square."""
     x = floor(x)
