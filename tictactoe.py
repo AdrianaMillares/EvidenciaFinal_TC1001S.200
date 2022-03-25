@@ -49,20 +49,138 @@ def floor(value):
 
 state = {'player': 0}
 players = [drawx, drawo]
-
+places_on_grid = [
+    " ", " ", " ", " ", " ", " ", " ", " ", " "
+]
 
 # Draw X or O in tapped square
 def tap(x, y):
     """Draw X or O in tapped square."""
     x = floor(x)
     y = floor(y)
+    
     player = state['player']
     draw = players[player]
-    draw(x, y)
-    update()
-    state['player'] = not player
 
-
+    if x==-200 and y==66:
+        if places_on_grid[0]== " ":
+            places_on_grid[0] = 1
+            draw(x, y)
+            update()
+            state['player'] = not player
+            print("Lugar Valido")
+            
+        elif places_on_grid[0] != "":
+            print("OCUPADO")
+            #print(places_on_grid)
+          
+    elif x==-67 and y==66:
+        if places_on_grid[1]== " ":
+            places_on_grid[1] = 1
+            draw(x, y)
+            update()
+            state['player'] = not player
+            print("Lugar Valido")
+            
+            
+        elif places_on_grid[1] != "":
+            print("OCUPADO")
+            #print(places_on_grid)
+            
+    elif x==66 and y==66:
+        if places_on_grid[2]== " ":
+            places_on_grid[2] = 1
+            draw(x, y)
+            update()
+            state['player'] = not player
+            print("Lugar Valido")
+            
+            
+        elif places_on_grid[2] != "":
+            print("OCUPADO")
+            #print(places_on_grid)
+            
+    elif x==-200 and y==-67:
+        if places_on_grid[3]== " ":
+            places_on_grid[3] = 1
+            draw(x, y)
+            update()
+            state['player'] = not player
+            print("Lugar Valido")
+            
+            
+        elif places_on_grid[3] != "":
+            print("OCUPADO")
+            #print(places_on_grid)
+            
+    elif x==-67 and y==-67:
+        if places_on_grid[4]== " ":
+            places_on_grid[4] = 1
+            draw(x, y)
+            update()
+            state['player'] = not player
+            print("Lugar Valido")
+            
+            
+        elif places_on_grid[4] != "":
+            print("OCUPADO")
+            #print(places_on_grid)
+            
+    elif x==66 and y==-67:
+        if places_on_grid[5]== " ":
+            places_on_grid[5] = 1
+            draw(x, y)
+            update()
+            state['player'] = not player
+            print("Lugar Valido")
+            
+            
+        elif places_on_grid[5] != "":
+            print("OCUPADO")
+            #print(places_on_grid)
+            
+    elif x==-200 and y==-200:
+        if places_on_grid[6]== " ":
+            places_on_grid[6] = 1
+            draw(x, y)
+            update()
+            state['player'] = not player
+            print("Lugar Valido")
+            
+            
+        elif places_on_grid[6] != "":
+            print("OCUPADO")
+            #print(places_on_grid)
+            
+    elif x==-67 and y==-200:
+        if places_on_grid[7]== " ":
+            places_on_grid[7] = 1
+            draw(x, y)
+            update()
+            state['player'] = not player
+            print("Lugar Valido")
+            
+            
+        elif places_on_grid[7] != "":
+            print("OCUPADO")
+            #print(places_on_grid)
+            
+    elif x==66 and y==-200:
+        if places_on_grid[8]== " ":
+            places_on_grid[8] = 1
+            draw(x, y)
+            update()
+            state['player'] = not player
+            print("Lugar Valido")
+            
+            
+        elif places_on_grid[8] != "":
+            print("OCUPADO")
+            #print(places_on_grid)
+        
+    
+  
+    
 setup(420, 420, 370, 0)
 hideturtle()
 tracer(False)
