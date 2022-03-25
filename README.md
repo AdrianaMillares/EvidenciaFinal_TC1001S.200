@@ -35,6 +35,7 @@ Primeramente se agrego el código del juego de Pacman por defecto de freegames. 
 > Autor: José Armando Rosas Balderas
 
 ### Tic Tac Toe
+Primeramente, se usó el código del juego Tic Tac Toe (Gato) de freegames. Posteriormente se analizó y comento dicho código bajo los estándares revisados en clase. Como primera modificación se cambió el color de las figuras (O y X), también se cambió el tamaño y posición del mismo. Para la segunda modificación se requería comprobar si el lugar seleccionado estaba ocupado ya que el código inicial superponía ambas figuras. 
 > Autor: José Ángel García López
   
 ### Memory
